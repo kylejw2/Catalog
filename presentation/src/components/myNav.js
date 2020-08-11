@@ -8,11 +8,14 @@ const Example = () => {
 
   return (
     <div>
-      <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">Beginner's Guide to Web Development</NavbarBrand>
+      <Navbar style={{padding: "25px"}} color="light" light>
+        <NavbarBrand href="/" className="mr-auto">Web Development Glossary</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
+            <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink href="/glossary/">Glossary</NavLink>
             </NavItem>

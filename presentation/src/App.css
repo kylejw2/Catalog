@@ -3,3 +3,42 @@
 .glossary-btn {
     color: red;
 }
+
+.padding {
+    padding: 15px;
+}
+
+.extra-padding {
+    padding: 50px;
+}
+
+.words {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.display-5 {
+    color: rgb(77, 77, 77);
+}
+.display-5:hover {
+    cursor: pointer;
+    color: rgb(20, 91, 104);
+}
+
+.word {
+    width: 50%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer {
+    background-color: rgba(233, 233, 233, 0.5);
+}
+@media only screen and (max-width: 450px) {
+    .word {
+        width: 100%;
+        text-align: left;
+    }
+        
+}

@@ -1,39 +1,43 @@
 import React from 'react';
-import MyNav from './myNav';
-import MyJumbotron from './myJumbotron';
 import {Button} from 'reactstrap';
 import '../App.css';
-// import MyCarousel from './myCarousel';
 
 function App() {
   return (
     <div>
-        <MyNav />
-        <MyJumbotron />
+        {/* <MyJumbotron /> */}
         {/* <MyCarousel /> */}
+        <div className='container-fluid padding'>
+        <div className='row text-center padding'>
+        <div className='col-md-4 col-sm-6'>
+          <h3>SEARCH</h3>
+            <p>Have a word in mind? Search for it in the glossary here.</p>
+            <Button color="info" href="/glossary/">Search</Button>
+        </div>
+        <div className='col-md-4 col-sm-6'>
+            <h3>ALPHABETICAL</h3>
+            <p>Learn each word/phrase in a simple alphabetical order.</p>
+            <Button color="info" href="/glossary/">Alphabetical</Button>
+        </div>
+        <div className='col-md-4 col-sm-12'>
+            <h3>TOPICS</h3>
+            <p>Want to be an expert in a specific topic? Start here.</p>
+            <Button color="info" href="/glossary/">Topic</Button>
+        </div>
+        </div>
+        <hr className='my-4' />
+        </div>
+        
         <div class='container-fluid padding'>
-        <div class='row text-center padding'>
-        <div class='col-sm-6'>
-            <h3>PROGRAMMING BASICS</h3>
-            <p>Learn essentials to programming that can be applied to other computer languages, such as C++, Java, or Python.</p>
-        </div>
-        <div class='col-sm-6'>
-          <h3>INDUSTRY PROJECTS</h3>
-            <p>After becoming familiar with my simple glossary of web development, learn to build industry projects that are sure to catch the attention of potential recruiters.</p>
-        </div>
-        <div class='col-sm-12'>
-            <h3>WEB APPLICATIONS</h3>
-            <p>Build fully functional web applications from UI to database management after understanding the core principles behind web development.</p>
-        </div>
-        </div>
-        <div class='row text-center padding'>
-        <div class='col-sm-12'>
-        <Button color="success" href="/glossary/">Begin Web Development Tutorial</Button>
-        </div>
-        </div>
-        
-        <hr class='my-4' />
-        
+          <div class='row welcome text-center'>
+              <div class='col-12'>
+                  <h1 class='display-4'>Web Development Glossary.</h1>
+              </div>
+              <hr/>
+              <div class='col-12'>
+                  <p class='lead'>Only the most popular terms in web development.</p>
+              </div>
+          </div>
         </div>
     </div>
   );
