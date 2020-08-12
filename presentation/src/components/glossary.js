@@ -1,19 +1,19 @@
 import React from 'react';
 import Word from './word';
 import icon from '../assets/icon.png';
-import {Button} from 'reactstrap';
+import MyJumbotron from './myJumbotron';
 
 class Glossary extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             words: [{}],
-            alphabetize: false
+            popularity: false
         }
     }
 
     handleToggle = () => {
-        const current = this.state.alphabetize;
+        const current = this.state.popularity;
         this.refresh(!current);
         console.log(!current);
     }
@@ -22,68 +22,59 @@ class Glossary extends React.Component {
         this.refresh();
     }
 
-    refresh = async (alphabetize = false) => {
+    refresh = async (popularity = false) => {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/glossary`);
         const data = await response.json();
-        alphabetize ? this.setState({words: data.sort((a, b) => {
-            const termA = a.term.toUpperCase();
-            const termB = b.term.toUpperCase();
+        data.sort((a,b) => {
+            var termA = a.term.toUpperCase();
+            var termB = b.term.toUpperCase();
             if (termA < termB) {return -1};
-            if (termA > termB) {return 1};
+            if (termB > termA) {return 1};
             return 0;
-        }), alphabetize: alphabetize}) : this.setState({words: data, alphabetize: alphabetize})
+        });
+        // IMPLEMENT THE QUICK SORT ALGORITHM ACCORDING TO NUMBER OF VISITS. THIS MUST BE DONE AFTER AN UPDATE METHOD IS CREATED FOR THE BACK-END
+        popularity ? this.setState({popularity: popularity}) : this.setState({words: data, popularity: popularity})
     }
 
     
     render() {
-        const words = this.state.words.map(word => <Word word={word} />);
+        const words = this.state.words.map(word => <Word key={word._id} word={word} />);
         return (
             <>
+            <MyJumbotron toggle={this.handleToggle} refresh={this.refresh} />
             <div className='container-fluid padding'>
-                <div className='row welcome text-center'>
-                    <div className='col-12'>
-                        <h1 className='display-4'>Glossary.</h1>
-                    </div>
-                    <hr/>
-                    <div className='col-12'>
-                        <p className='lead'>Connect the front-end to the back end and display all of the words/phrases.</p>
-                    </div>
-                    <div className='col-12'>
-                        <Button color='primary' onClick={this.handleToggle}>Alphabetize</Button>
-                    </div>
-                </div>
                 <div className="words">
                     {words}
                 </div>
             </div>
             <footer>
-                <div class='container-fluid padding'>
-                <div class='row text-center'>
-                    <div class='col-md-4'>
+                <div className='container-fluid padding'>
+                <div className='row text-center'>
+                    <div className='col-md-4'>
                         <img src={icon} alt='' width='60px'/>
-                        <hr class='light'/>
+                        <hr className='light'/>
                         <p>801-509-8540</p>
                         <p>kylejamwright@gmail.com</p>
                         <p>Greater Salt Lake Area</p>
                     </div>
-                    <div class='col-md-4'>
-                        <hr class='light'/>
+                    <div className='col-md-4'>
+                        <hr className='light'/>
                         <h5>My hours</h5>
-                        <hr class='light'/>
+                        <hr className='light'/>
                         <p>Monday-Friday: 8am - 5pm</p>
                         <p>Saturday: 10am - 4pm</p>
                         <p>Sunday: Closed</p>
                     </div>
-                    <div class='col-md-4'>
-                        <hr class='light'/>
+                    <div className='col-md-4'>
+                        <hr className='light'/>
                         <h5>Service Area</h5>
-                        <hr class='light'/>
+                        <hr className='light'/>
                         <p>Utah</p>
                         <p>All other states</p>
                         <p>Wherever you are</p>
                     </div>
-                    <div class='col-12'>
-                        <hr class='light-100'/>
+                    <div className='col-12'>
+                        <hr className='light-100'/>
                         <h5>&copy; kylejw2.github.io</h5>
                     </div>
                 </div>

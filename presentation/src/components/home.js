@@ -15,9 +15,9 @@ function App() {
             <Button color="info" href="/glossary/">Search</Button>
         </div>
         <div className='col-md-4 col-sm-6'>
-            <h3>ALPHABETICAL</h3>
-            <p>Learn each word/phrase in a simple alphabetical order.</p>
-            <Button color="info" href="/glossary/">Alphabetical</Button>
+            <h3>POPULARITY</h3>
+            <p>My algorithm finds the most relevant words/phrases for you.</p>
+            <Button color="info" href="/glossary/">Popularity</Button>
         </div>
         <div className='col-md-4 col-sm-12'>
             <h3>TOPICS</h3>
@@ -31,7 +31,7 @@ function App() {
         <div class='container-fluid padding'>
           <div class='row welcome text-center'>
               <div class='col-12'>
-                  <h1 class='display-4'>Web Development Glossary.</h1>
+                  <h1 class='display-3'>Web Development Glossary.</h1>
               </div>
               <hr/>
               <div class='col-12'>

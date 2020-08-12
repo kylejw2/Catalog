@@ -6,24 +6,19 @@ import {
     Jumbotron,
     Button
   } from 'reactstrap';
+  import AddWord from './addWord';
 
-  const MyJumbotron = () => {
+  const MyJumbotron = (props) => {
       return (
-        <Jumbotron primary>
+        <Jumbotron>
         <Container>
             <Row>
                 <Col>
-                    <h1>Want to learn the basics of web development?</h1>
-                    <p>
-                        <Button
-                            tag="a"
-                            color="success"
-                            size="large"
-                            href="/glossary/"
-                        >
-                            Click Here
-                        </Button>
-                    </p>
+                    <h1>Glossary</h1>
+                    <div className='buttons'>
+                        <AddWord refresh={props.refresh}/>
+                        <Button color='secondary' onClick={props.toggle}>Popularity</Button>
+                    </div>
                 </Col>
             </Row>
         </Container>
