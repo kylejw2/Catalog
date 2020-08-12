@@ -53,6 +53,13 @@ footer {
     color: rgb(68, 68, 68);
 }
 
+.display-title {
+    font-weight: 300;
+    line-height: 1.2;
+    color: rgb(77,77,77);
+    font-size: 3.5rem;
+}
+
 @media only screen and (max-width: 450px) {
     .word {
         width: 100%;

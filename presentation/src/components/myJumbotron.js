@@ -14,7 +14,7 @@ import {
         <Container>
             <Row>
                 <Col>
-                    <h1>Glossary</h1>
+                    <h1 className="display-title">Glossary</h1>
                     <div className='buttons'>
                         <AddWord refresh={props.refresh}/>
                         <Button color='secondary' onClick={props.toggle}>Popularity</Button>
