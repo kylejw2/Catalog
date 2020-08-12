@@ -108,5 +108,6 @@ module.exports = {
     readGlossary,
     createTerm,
     upsertTerm,
+    updateTerm,
     deleteTerm
 }

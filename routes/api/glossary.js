@@ -4,7 +4,8 @@ const {
     readGlossary,
     createTerm,
     deleteTerm,
-    upsertTerm
+    upsertTerm,
+    updateTerm
 } = require('../../data/glossary');
 
 // GET glossary
@@ -26,13 +27,20 @@ router.put('/:id', async (req, res, next) => {
     const id = req.params.id;
     const data = await upsertTerm(id, body);
     res.send(data);
-})
+});
+
+router.patch('/:id', async (req, res, next) => {
+    const body = req.body;
+    const id = req.params.id;
+    const data = await updateTerm(id, body);
+    res.send(data);
+});
 
 // DELETE term
 router.delete('/:id', async (req, res, next) => {
     const id = req.params.id;
     const data = await deleteTerm(id);
     res.send(data);
-})
+});
 
 module.exports = router;
