@@ -1,5 +1,5 @@
 import React from 'react';
-import icon from '../assets/icon.png';
+import icon from '../assets/IconLight.png';
 
 const Footer = () => {
     return (
@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='container-fluid padding'>
             <div className='row text-center'>
                 <div className='col-md-4'>
-                    <img src={icon} alt='' width='60px'/>
+                    <img src={icon} alt='' width='58px'/>
                     <hr className='light'/>
                     <p>801-509-8540</p>
                     <p>kylejamwright@gmail.com</p>

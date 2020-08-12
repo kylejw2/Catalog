@@ -7,8 +7,7 @@ const Example = () => {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <div>
-      <Navbar style={{padding: "25px"}} color="light" light>
+      <Navbar style={{padding: "25px"}} color="light" light sticky={"top"}>
         <NavbarBrand href="/" className="mr-auto">Web Development Glossary</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
@@ -25,7 +24,6 @@ const Example = () => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
   );
 }
 
