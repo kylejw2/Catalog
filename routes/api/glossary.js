@@ -3,7 +3,8 @@ var router = express.Router();
 const {
     readGlossary,
     createTerm,
-    deleteTerm
+    deleteTerm,
+    upsertTerm
 } = require('../../data/glossary');
 
 // GET glossary
@@ -16,6 +17,14 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const body = req.body;
     const data = await createTerm(body);
+    res.send(data);
+});
+
+// PUT term
+router.put('/:id', async (req, res, next) => {
+    const body = req.body;
+    const id = req.params.id;
+    const data = await upsertTerm(id, body);
     res.send(data);
 })
 

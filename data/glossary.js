@@ -86,5 +86,6 @@ const deleteTerm = (id) => {
 module.exports = {
     readGlossary,
     createTerm,
+    upsertTerm,
     deleteTerm
 }
