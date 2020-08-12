@@ -45,6 +45,27 @@ const createTerm = (term) => {
     return iou;
 }
 
+// UPSERT a term
+const upsertTerm = (id, term) => {
+    const iou = new Promise((resolve, reject) => {
+        MongoClient.connect(url, options, (err, client) => {
+            assert.equal(err, null);
+            const db = client.db(db_name);
+            const collection = db.collection(col_name);
+            collection.findOneAndUpdate({_id: new ObjectId(id)}, 
+            {$set: term},
+            {upsert: true},
+            (err, result) => {
+                assert.equal(err, null);
+                resolve(result);
+                client.close();
+            }
+            );
+        });
+    });
+    return iou;
+}
+
 //DELETE a term
 const deleteTerm = (id) => {
     const iou = new Promise((resolve, reject) => {
