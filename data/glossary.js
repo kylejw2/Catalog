@@ -52,14 +52,35 @@ const upsertTerm = (id, term) => {
             assert.equal(err, null);
             const db = client.db(db_name);
             const collection = db.collection(col_name);
-            collection.findOneAndUpdate({_id: new ObjectId(id)}, 
-            {$set: term},
+            collection.findOneAndReplace({_id: new ObjectId(id)}, 
+            term,
             {upsert: true},
             (err, result) => {
                 assert.equal(err, null);
                 resolve(result);
                 client.close();
             }
+            );
+        });
+    });
+    return iou;
+}
+
+// UPDATE a term
+const updateTerm = (id, term) => {
+    const iou = new Promise((resolve, reject) => {
+        MongoClient.connect(url, options, (err, client) => {
+            assert.equal(err, null);
+            const db = client.db(db_name);
+            const collection = db.collection(col_name);
+            collection.findOneAndUpdate(
+                {_id: new ObjectId(id)},
+                {$set: {...term}},
+                (err, result) => {
+                    assert.equal(err, null);
+                    resolve(result.value);
+                    client.close();
+                }
             );
         });
     });
