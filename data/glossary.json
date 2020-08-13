@@ -3,270 +3,315 @@
         "term": "HTML",
         "definition": ["Hypertext Markup Language, base structure or page for a web app/site, a way to tag text files with relevant display information."],
         "visits": 0,
-        "meta": ["front-end"]
+        "meta": ["front-end"],
+        "archived": false
     },
     {
         "term": "CSS",
         "definition": ["Cascading Style Sheet makes the web the prettiest, handles layout/format, the look, and feel."],
         "visits": 0,
-        "meta": ["front-end", "style"]
+        "meta": ["front-end", "style"],
+        "archived": false
     },
     {
         "term": "JavaScript",
         "definition": ["Makes the web dynamic and interactive, a functional programming language.", "A high-level interpreted programming language. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "XML",
         "definition": ["eXtensionable Markup Language, designed to store and transport data."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Tag",
         "definition": ["The structure of code that dictates overall syntax and order of your HTML, the building blocks of the World Wide Web, within HTML there are finite set of Tags."],
         "visits": 0,
-        "meta": ["front-end"]
+        "meta": ["front-end"],
+        "archived": false
     },
     {
         "term": "Element",
         "definition": ["Implementation of a Tag, where the rubber hits the road for HTML page creation, the further structure within a Tag, typically has an opening and closing tag might be self-closing."],
         "visits": 0,
-        "meta": ["front-end"]
+        "meta": ["front-end"],
+        "archived": false
     },
     {
         "term": "Attribute",
         "definition": ["Nested forms of additional information, used to amplify the tag or element to enhance the characteristics of its trait, metadata of an element."],
         "visits": 0,
-        "meta": ["front-end"]
+        "meta": ["front-end"],
+        "archived": false
     },
     {
         "term": "Key/Value Pair",
         "definition": ["An abstract data type that includes a group of key identifiers and a set of associated values, name-value pair, key-value pair, field–value pair or attribute–value pair."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "Metadata",
         "definition": ["A set of data that describes and gives information about other data, the story of data, details about data."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "DOM",
         "definition": ["Document Object Model, defines the structure of a document (HTML) and the way it is accessed/manipulated."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Collection",
         "definition": ["A group of objects with similar purpose."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Component",
         "definition": ["An object within a collection, a grouping of intended behavior.", "A container that groups classes, functions, behavior and values to achieve a specific purpose, can be a file(s) or section in the overall application."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Scope",
         "definition": ["Field of view, overall or narrow picture, the encapsulation of work, { }."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Encapsulation",
         "definition": ["The overarching umbrella, cocoon, the content boundaries."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "IDE",
         "definition": ["Integrated Development Environment, combines several tools (text editor, code compiler, source control manager and code executor) into one work environment."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Terminal",
         "definition": ["Provides text based access to the operating system."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "SVC",
         "definition": ["Source Version Control, enables rollback to previous versions of code, allows for collaborative effort on the same code base, provides a platform to distribute repositories."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "GIT",
         "definition": ["Distributed/Decentralized SVC."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Types of Websites",
         "definition": ["Shopping, Information Gathering and Information Distribution."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Node",
         "definition": ["A connection point, a redistribution point, and a communication endpoint."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Node.JS",
         "definition": ["An open sourced, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Runtime",
         "definition": ["Live execution."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Syntax",
         "definition": ["The grammar of a language, how you write things in a given language."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Function",
         "definition": ["Performs a task, basis for behavior, an expression involving one or more variable that operate in a particular way to perform work."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "Variable",
         "definition": ["Replaceable object that is used for a specific purpose, commonly used within a function, functions are also considered variables."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Let",
         "definition": ["mutable variable, local scope, ask yourself, \"Does this need to change?\" if, Yes pick this."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Const",
         "definition": ["immutable variable, local scope, ask yourself, \"Does this need to change?\" if, No pick this."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Var",
         "definition": ["mutable variable, global scope, please avoid using."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Type",
         "definition": ["A data type or simply type is a classification of data which tells the compiler or interpreter how the programmer intends to use the data."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "String",
         "definition": ["Collection of characters, alphanumeric and special characters included, immutable."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Number",
         "definition": ["A numeric value that allows for decimals in JavaScript."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Boolean",
         "definition": ["True / False statement, expression or value."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Script",
         "definition": ["Something that executes a specific list of functions/tasks/behaviors, when talking about the HTML tag, it allows you to import JavaScript files into your DOM."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Conditional",
         "definition": ["A question with a limited number of outcomes used to direct the flow of the application."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "Logic",
         "definition": ["The definition of your tasks and what will be executed, you express logic to a computer to receive output from that computer.", "A system or set of principles underlying the arrangements of elements in a computer or electronic device so as to perform a specified task."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Array",
         "definition": ["A dataset that contains other objects, stores elements at zero based index keys, [ ]."],
         "visits": 0,
-        "meta": ["data"]
+        "meta": ["data"],
+        "archived": false
     },
     {
         "term": "Ascii/Unicode",
         "definition": ["Hexidecimal value for alphanumeric, symbols and special characters, Ascii is a subset of Unicode."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Callback",
         "definition": ["A function that executes at the completion of another, typically nested in the completed function and provided to that parent function via a parameter"],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "Promise",
         "definition": ["An asynchronous function with state (fulfilled, rejected, pending), .then() or .catch() to handle completion."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "Native",
         "definition": ["Exists at the base level of whatever you are referring to, Native JavaScript object/functions are inherent in JavaScript and can be used without needing to define them as they are defined Natively."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "Full Stack Application",
         "definition": ["Frontend and Backend develop, top to bottom web page with all the bells and whistles, made up of a UI, API, and DB."],
         "visits": 0,
-        "meta": [""]
+        "meta": [""],
+        "archived": false
     },
     {
         "term": "UI",
         "definition": ["User Interface (Frontend), Displays Data, how users interact with the application, the look and feel."],
         "visits": 0,
-        "meta": ["front-end", "style"]
+        "meta": ["front-end", "style"],
+        "archived": false
     },
     {
         "term": "API",
         "definition": ["Application Programming Interface (Backend), Accesses Data, bridge between the client and database, business logic is housed here, the brains of the application."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "DB",
         "definition": ["Database (Backend), Stores Data."],
         "visits": 0,
-        "meta": ["back-end"]
+        "meta": ["back-end"],
+        "archived": false
     },
     {
         "term": "React",
         "definition": ["A frontend, JavaScript, component-driven Library built by Facebook."],
         "visits": 0,
-        "meta": ["front-end", "style"]
+        "meta": ["front-end", "style"],
+        "archived": false
     }
 ]

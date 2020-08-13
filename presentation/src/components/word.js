@@ -33,7 +33,18 @@ const Word = (props) => {
       props.remove(props.word._id);
     }
 
-    
+    const archive = async () => {
+      const archived = !props.word.archived;
+      const data = {archived: archived};
+      const options = {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+      await fetch(`${process.env.REACT_APP_API_URL}/glossary/${props.word._id}`, options);
+    }
     
     return (
     <div className="word">
@@ -46,6 +57,7 @@ const Word = (props) => {
         </Card>
           <Button outline color="danger" style={{marginTop: "10px"}} onClick={handleClick}><i className="fa fa-trash-o" style={{fontSize:"20px"}}></i></Button>
           <UpsertWord word={props.word} refresh={props.refresh}/>
+          <Button outline color='warning' style={{marginLeft: "10px", marginTop: "10px"}} onClick={archive}><i class="fa fa-archive" style={{fontSize:"20px"}}></i></Button>
       </Collapse>
     </div>
   );

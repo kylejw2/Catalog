@@ -35,14 +35,12 @@
 .buttons{
     display: flex;
     justify-content: flex-start;
+    align-content: center;
 }
-
 .buttons button {
-    margin: 30px
-}
-
-footer {
-    background-color: rgba(233, 233, 233, 0.5);
+    margin: 20px 25px 0 0;
+    height: 38px !important;
+    overflow: hidden;
 }
 
 .display-4 {
@@ -61,7 +59,7 @@ footer {
 }
 
 footer {
-    background-color: #3f3f3f;
+    background-color: #3f3f3f !important;
     color: #d5d5d5;
     padding-top: 2rem; 
 }
@@ -81,10 +79,28 @@ footer a {
     color: #d5d5d5;
 }
 
+#toggle-right {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    padding: 0;
+}
+
 @media only screen and (max-width: 450px) {
     .word {
         width: 100%;
         text-align: left;
+    }
+        
+}
+@media only screen and (max-width: 1200px) {
+    .search-bar {
+        height: 87px;
     }
         
 }

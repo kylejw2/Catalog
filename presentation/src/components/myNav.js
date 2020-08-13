@@ -13,13 +13,13 @@ const Example = () => {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/">Home</NavLink>
+              <NavLink href="/"><i className="fa fa-home"></i> Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/glossary/">Glossary</NavLink>
+              <NavLink href="/glossary/"><i className="fa fa-book"></i> Glossary</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/kylejw2" target="_blank">GitHub</NavLink>
+              <NavLink href="https://github.com/kylejw2" target="_blank"><i className="fa fa-github"></i> GitHub</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

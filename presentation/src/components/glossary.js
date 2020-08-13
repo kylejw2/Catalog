@@ -8,13 +8,23 @@ class Glossary extends React.Component {
         super(props);
         this.state = {
             words: [{}],
-            popularity: false
+            popularity: false,
+            archived: false
         }
     }
 
-    handleToggle = () => {
-        const current = this.state.popularity;
-        this.refresh(!current);
+    handleTogglePop = () => {
+        this.setState({popularity: !this.state.popularity});
+        this.refresh();
+    }
+
+    handleToggleArch1 = () => {
+        this.setState({archived: true});
+        this.refresh();
+    }
+    handleToggleArch2 = () => {
+        this.setState({archived: false});
+        this.refresh();
     }
 
     componentDidMount() {
@@ -51,9 +61,9 @@ class Glossary extends React.Component {
         }
     }
 
-    refresh = async (popularity = false) => {
+    refresh = async () => {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/glossary`);
-        const data = await response.json();
+        let data = await response.json();
         data.sort((a,b) => {
             var termA = a.term.toUpperCase();
             var termB = b.term.toUpperCase();
@@ -61,16 +71,33 @@ class Glossary extends React.Component {
             if (termB > termA) {return 1};
             return 0;
         });
+        const doNothing = () => {return;}
         // IMPLEMENT THE QUICK SORT ALGORITHM ACCORDING TO NUMBER OF VISITS. THIS MUST BE DONE AFTER AN UPDATE METHOD IS CREATED FOR THE BACK-END
-        popularity ? this.setState({words: this.quickSort(data), popularity: popularity}) : this.setState({words: data, popularity: popularity});
-        console.log(this.quickSort(data))
+        if (this.state.popularity === true) {
+            // this.setState({words: this.quickSort(data)})
+            data = this.quickSort(data);
+        }
+        if (this.state.archived === true) {
+            const archivedWords = [];
+            for (let i = 0; i < data.length; i++) {
+                data[i].archived ? archivedWords.push(data[i]): doNothing();
+            }
+            data = archivedWords;
+        } else {
+            const unarchivedWords = [];
+            for (let i = 0; i < data.length; i++) {
+                data[i].archived ? doNothing() : unarchivedWords.push(data[i]);
+            }
+            data = unarchivedWords;
+        }
+        this.setState({words: data});
     }
 
     render() {
-        const words = this.state.words.map(word => <Word key={word._id} word={word} remove={this.removeTerm} refresh={this.refresh} />);
+        const words = this.state.words.map(word => <Word key={word._id} word={word} remove={this.removeTerm} refresh={this.refresh}/>);
         return (
             <>
-            <MyJumbotron toggle={this.handleToggle} refresh={this.refresh} />
+            <MyJumbotron togglePop={this.handleTogglePop} toggleArch1={this.handleToggleArch1} toggleArch2={this.handleToggleArch2} refresh={this.refresh} />
             <div className='container-fluid padding'>
                 <div className="words">
                     {words}
