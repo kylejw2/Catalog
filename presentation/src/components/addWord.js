@@ -1,20 +1,46 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const AddWord = (props) => {
   const {
     className
   } = props;
 
-  const [modal, setModal] = useState(false);
-  const [word, setWord] = useState(() => {return {term: '', definition: [''], visits: 0, meta: ['']}})
+  const [modal, setModal] = useState(() => false);
+  const [word, setWord] = useState(() => {return {term: '', definition: [''], visits: 0, meta: []}})
+  const [frontEnd, setFrontEnd] = useState(() => false);
+  const [backEnd, setBackEnd] = useState(() => false);
+  const [style, setStyle] = useState(() => false);
+  const [data, setData] = useState(() => false);
+
+  const handleChangeFrontEnd = () => {
+    const prev = frontEnd;
+    setFrontEnd(!prev);
+  }
+  const handleChangeBackEnd = () => {
+    const prev = backEnd;
+    setBackEnd(!prev);
+  }
+  const handleChangeStyle = () => {
+    const prev = style;
+    setStyle(!prev);
+  }
+  const handleChangeData = () => {
+    const prev = data;
+    setData(!prev);
+  }
+
 
   const toggle = () => {
       setModal(!modal);
-      setWord({term: '', definition: [''], visits: 0, meta: ['']});
+      setWord({term: '', definition: [''], visits: 0, meta: []});
     };
 
   const handleAddWord = async () => {
+    if (frontEnd) {const obj = {...word}; obj.meta.push('front-end'); setWord(obj)};
+    if (backEnd) {const obj = {...word}; obj.meta.push('back-end'); setWord(obj)};
+    if (style) {const obj = {...word}; obj.meta.push('style'); setWord(obj)};
+    if (data) {const obj = {...word}; obj.meta.push('data'); setWord(obj)};
     const options = {
         method: 'POST',
         headers: {
@@ -55,7 +81,7 @@ const AddWord = (props) => {
 
   return (
     <div>
-      <Button color="primary" onClick={toggle}>Add Term</Button>
+      <Button color="secondary" onClick={toggle}>Add Term</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>New Term</ModalHeader>
         <ModalBody>
@@ -69,10 +95,29 @@ const AddWord = (props) => {
                 <Button outline color="primary" style={{margin: "10px 10px 10px 0"}} onClick={addDefinition}>Additonal Definition</Button>
                 <Button outline color="danger" style={{margin: "0"}} onClick={removeDefinition}>Remove Definition</Button>
             </FormGroup>
+            <legend>Select all that apply</legend>
             <FormGroup check>
                 <Label check>
-                <Input type="checkbox" />
-                Check me out
+                <Input type="checkbox" name="frontEnd" checked={frontEnd} onChange={handleChangeFrontEnd}/>
+                Front-end
+                </Label>
+            </FormGroup>
+            <FormGroup check>
+                <Label check>
+                <Input type="checkbox" name="backEnd" checked={backEnd} onChange={handleChangeBackEnd}/>
+                Back-end
+                </Label>
+            </FormGroup>
+            <FormGroup check>
+                <Label check>
+                <Input type="checkbox" name="style" checked={style} onChange={handleChangeStyle}/>
+                Style
+                </Label>
+            </FormGroup>
+            <FormGroup check>
+                <Label check>
+                <Input type="checkbox" name="data" checked={data} onChange={handleChangeData}/>
+                Data
                 </Label>
             </FormGroup>
         </Form>

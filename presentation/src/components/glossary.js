@@ -8,9 +8,19 @@ class Glossary extends React.Component {
         super(props);
         this.state = {
             words: [{}],
+            data: [{}],
             popularity: false,
             archived: false
         }
+    }
+
+    searchResult = (input) => {
+        const match = [];
+        if (input === '') {this.refresh(); return;}
+        for (let i = 0; i < this.state.data.length; i++) {
+            if (this.state.data[i].term === input) {match.push(this.state.data[i])}
+        }
+        this.setState({words: match})
     }
 
     handleTogglePop = () => {
@@ -90,14 +100,26 @@ class Glossary extends React.Component {
             }
             data = unarchivedWords;
         }
-        this.setState({words: data});
+        this.setState({words: data, data: data});
     }
 
     render() {
-        const words = this.state.words.map(word => <Word key={word._id} word={word} remove={this.removeTerm} refresh={this.refresh}/>);
+        const words = this.state.words.map(word => <Word 
+            key={word._id} 
+            word={word} 
+            remove={this.removeTerm} 
+            refresh={this.refresh}
+        />);
         return (
             <>
-            <MyJumbotron togglePop={this.handleTogglePop} toggleArch1={this.handleToggleArch1} toggleArch2={this.handleToggleArch2} refresh={this.refresh} />
+            <MyJumbotron 
+                togglePop={this.handleTogglePop} 
+                toggleArch1={this.handleToggleArch1} 
+                toggleArch2={this.handleToggleArch2} 
+                refresh={this.refresh} 
+                searchResult={this.searchResult}
+                className="no-margin"
+            />
             <div className='container-fluid padding'>
                 <div className="words">
                     {words}

@@ -2,12 +2,15 @@ import React from 'react';
 import {Button} from 'reactstrap';
 import Footer from './footer';
 import '../App.css';
+import MyNav from './myNav';
+
 
 function App() {
   return (
     <div>
         {/* <MyJumbotron /> */}
         {/* <MyCarousel /> */}
+        <MyNav />
         <div className='container-fluid padding'>
           <div className='row welcome text-center'>
               <div className='col-12'>

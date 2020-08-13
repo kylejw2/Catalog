@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
-
+#root {
+    background-color: #f3f3f3;
+}
 .glossary-btn {
     color: red;
 }
@@ -54,14 +56,19 @@
 .display-title {
     font-weight: 300;
     line-height: 1.2;
-    color: rgb(77,77,77);
+    /* color: rgb(77,77,77); */
+    color: rgb(240, 240, 240);
     font-size: 3.5rem;
 }
 
 footer {
-    background-color: #3f3f3f !important;
-    color: #d5d5d5;
     padding-top: 2rem; 
+}
+.myJumbo, footer {
+    /* background-color: #3f3f3f !important; */
+    background: linear-gradient(#5e5e5e, #17a2b8);
+    color: #d5d5d5;
+    border-radius: 0 !important;
 }
 hr.light {
     border-top: 1px solid #d5d5d5;
@@ -89,6 +96,10 @@ ul {
 }
 ul li {
     padding: 0;
+}
+
+.checkbox {
+    display: flex;
 }
 
 @media only screen and (max-width: 450px) {

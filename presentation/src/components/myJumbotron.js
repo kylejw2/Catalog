@@ -15,14 +15,21 @@ import {
     const [dropdownOpen, setOpen] = useState(false);
     const toggle = () => setOpen(!dropdownOpen);
 
+    const [searchInput, updateSearch] = useState(() => '');
+    const handleChange = (event) => {
+        updateSearch(event.target.value);
+    }
+    const handleClick = () => {
+        props.searchResult(searchInput);
+    }
+
       return (
-        <Jumbotron>
+        <Jumbotron className="myJumbo">
         <Container>
             <Row>
                 <Col md="4" sm="12" lg="6">
                     <h1 className="display-title">Glossary</h1>
                 </Col>
-                {/* <Col sm="6"> */}
                     <div className="buttons col-sm-6 col-md-4 col-lg-3">
                         <AddWord refresh={props.refresh}/>
                         <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
@@ -39,13 +46,11 @@ import {
                     <div className="buttons col-sm-6 col-md-4 col-lg-3">
                         <Form className="search-bar" >
                             <FormGroup>
-                                <Input type="text" name="search" id="search" placeholder="Search" style={{marginTop: "20px", height:"40px !important"}}/>
+                                <Input type="text" name="searchInput" id="searchInput" value={searchInput} onChange={handleChange} placeholder="Search" style={{marginTop: "20px", height:"40px !important"}}/>
                             </FormGroup>
                         </Form>
-                        <Button outline><i className="fa fa-search"></i></Button>
-                    
+                        <Button onClick={handleClick}><i className="fa fa-search"></i></Button>
                     </div>
-                {/* </Col> */}
             </Row>
         </Container>
         </Jumbotron>
