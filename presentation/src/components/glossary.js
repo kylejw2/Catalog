@@ -15,7 +15,6 @@ class Glossary extends React.Component {
     handleToggle = () => {
         const current = this.state.popularity;
         this.refresh(!current);
-        console.log(!current);
     }
 
     componentDidMount() {
@@ -30,6 +29,28 @@ class Glossary extends React.Component {
         this.refresh();
     }
 
+    quickSort = (arr) => {
+        if (arr.length === 1) {return arr};
+        const pivot = arr[arr.length - 1].visits;
+        const leftArr = [];
+        const rightArr = [];
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i].visits >= pivot) {
+                leftArr.push(arr[i]);
+            } else {
+                rightArr.push(arr[i]);
+            }
+        }
+
+        if (leftArr.length > 0 && rightArr.length > 0) {
+            return [...this.quickSort(leftArr), arr[arr.length - 1], ...this.quickSort(rightArr)];
+        } else if (leftArr.length > 0) {
+            return [...this.quickSort(leftArr), arr[arr.length - 1]];
+        } else {
+            return [arr[arr.length - 1], ...this.quickSort(rightArr)];
+        }
+    }
+
     refresh = async (popularity = false) => {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/glossary`);
         const data = await response.json();
@@ -41,10 +62,10 @@ class Glossary extends React.Component {
             return 0;
         });
         // IMPLEMENT THE QUICK SORT ALGORITHM ACCORDING TO NUMBER OF VISITS. THIS MUST BE DONE AFTER AN UPDATE METHOD IS CREATED FOR THE BACK-END
-        popularity ? this.setState({popularity: popularity}) : this.setState({words: data, popularity: popularity})
+        popularity ? this.setState({words: this.quickSort(data), popularity: popularity}) : this.setState({words: data, popularity: popularity});
+        console.log(this.quickSort(data))
     }
 
-    
     render() {
         const words = this.state.words.map(word => <Word key={word._id} word={word} remove={this.removeTerm} refresh={this.refresh} />);
         return (

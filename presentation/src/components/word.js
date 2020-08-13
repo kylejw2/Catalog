@@ -8,15 +8,16 @@ const Word = (props) => {
     let count = true;
 
     const trackData = async () => {
-      // const options = {
-      //     method: 'PATCH',
-      //     headers: {
-      //         'Content-Type': 'application/json'
-      //     },
-      //     body: JSON.stringify()
-      // }
-      // await fetch(`${process.env.REACT_APP_API_URL}/glossary/${props.word._id}`, options);
-      // count = !count;
+      const data = {visits: props.word.visits++};
+      const options = {
+          method: 'PATCH',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      }
+      await fetch(`${process.env.REACT_APP_API_URL}/glossary/${props.word._id}`, options);
+      count = !count;
     }
 
     const toggle = () => {
@@ -44,7 +45,6 @@ const Word = (props) => {
           </CardBody>
         </Card>
           <Button outline color="danger" style={{marginTop: "10px"}} onClick={handleClick}><i className="fa fa-trash-o" style={{fontSize:"20px"}}></i></Button>
-          {/* <Button outline color="secondary"  style={{marginLeft: "10px", marginTop: "10px"}} onClick={handleClickUpdate}><i className="fa fa-gear" style={{fontSize:"20px"}}></i></Button> */}
           <UpsertWord word={props.word} refresh={props.refresh}/>
       </Collapse>
     </div>
