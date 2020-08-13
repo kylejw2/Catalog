@@ -34,7 +34,7 @@ const readTerm = (id) => {
         MongoClient.connect(url, options, (err, client) => {
             assert.equal(err, null);
             const db = client.db(db_name);
-            const collection = client.collection(col_name);
+            const collection = db.collection(col_name);
             collection.findOne({_id: new ObjectId(id)}, (err, result) => {
                 assert.equal(err, null);
                 resolve(result);

@@ -4,11 +4,11 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Form, FormGr
 const UpsertWord = (props) => {
   const [modal, setModal] = useState(false);
   const [word, setWord] = useState(async() => {
-    await fetch();
+    // await fetch();
     return {...props.word}
   })
   const [frontEnd, setFrontEnd] = useState(() => {
-    if (props.word.hasOwnProperty('term') && props.word.meta.findIndex(ele => ele === 'front-end') !== -1) {
+    if (props.word !== undefined && props.word.meta.findIndex(ele => ele === 'front-end') !== -1) {
       return true;
     }
     return false;

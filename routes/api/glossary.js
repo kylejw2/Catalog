@@ -2,11 +2,19 @@ var express = require('express');
 var router = express.Router();
 const {
     readGlossary,
+    readTerm,
     createTerm,
     deleteTerm,
     upsertTerm,
     updateTerm
 } = require('../../data/glossary');
+
+// GET a term
+router.get('/:id', async (req, res, next) => {
+    const id = req.params.id;
+    const data = await readTerm(id);
+    res.send(data);
+})
 
 // GET glossary
 router.get('/', async (req, res, next) => {
