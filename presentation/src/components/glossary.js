@@ -18,9 +18,13 @@ class Glossary extends React.Component {
         const match = [];
         if (input === '') {this.refresh(); return;}
         for (let i = 0; i < this.state.data.length; i++) {
-            if (this.state.data[i].term === input) {match.push(this.state.data[i])}
+            if (this.state.data[i].term.toLowerCase() === input.toLowerCase() || 
+            this.state.data[i].meta.findIndex(ele => ele.toLowerCase() === input.toLowerCase()) !== -1) {
+                match.push(this.state.data[i])
+            }
         }
-        this.setState({words: match})
+        match.length === 0 ? window.alert('Sorry, no results were found')
+        : this.setState({words: match});
     }
 
     handleTogglePop = () => {

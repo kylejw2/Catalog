@@ -57,7 +57,7 @@ const Word = (props) => {
         </Card>
           <Button outline color="danger" style={{marginTop: "10px"}} onClick={handleClick}><i className="fa fa-trash-o" style={{fontSize:"20px"}}></i></Button>
           <UpsertWord id={props.word._id} refresh={props.refresh}/>
-          <Button outline color='warning' style={{marginLeft: "10px", marginTop: "10px"}} onClick={archive}><i class="fa fa-archive" style={{fontSize:"20px"}}></i></Button>
+          <Button outline color='warning' style={{marginLeft: "10px", marginTop: "10px"}} onClick={archive}><i className="fa fa-archive" style={{fontSize:"20px"}}></i></Button>
       </Collapse>
     </div>
   );
