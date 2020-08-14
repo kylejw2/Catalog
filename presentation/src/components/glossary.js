@@ -23,8 +23,7 @@ class Glossary extends React.Component {
                 match.push(this.state.data[i])
             }
         }
-        match.length === 0 ? window.alert('Sorry, no results were found')
-        : this.setState({words: match});
+        this.setState({words: match});
     }
 
     handleTogglePop = () => {
@@ -88,7 +87,6 @@ class Glossary extends React.Component {
         const doNothing = () => {return;}
         // IMPLEMENT THE QUICK SORT ALGORITHM ACCORDING TO NUMBER OF VISITS. THIS MUST BE DONE AFTER AN UPDATE METHOD IS CREATED FOR THE BACK-END
         if (this.state.popularity === true) {
-            // this.setState({words: this.quickSort(data)})
             data = this.quickSort(data);
         }
         if (this.state.archived === true) {
@@ -126,11 +124,14 @@ class Glossary extends React.Component {
                 searchResult={this.searchResult}
                 className="no-margin"
             />
-            <div className='container-fluid padding'>
-                <div className="words">
-                    {words}
+            {words.length === 0 ? <div style={{padding: "100px", textAlign:"center", color: "rgb(68, 68, 68)", fontSize:"1.2rem"}}>
+                Sorry, there were no matches.</div> :
+                <div className='container-fluid padding'>
+                    <div className="words">
+                        {words}
+                    </div>
                 </div>
-            </div>
+            }
             <Footer />
             </>
         )

@@ -23,6 +23,13 @@ import {
         props.searchResult(searchInput);
     }
 
+    const handleEnter = (event) => {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            props.searchResult(searchInput);
+        }
+    }
+
       return (
         <Jumbotron className="myJumbo">
         <Container>
@@ -46,7 +53,7 @@ import {
                     <div className="buttons col-sm-6 col-md-4 col-lg-3">
                         <Form className="search-bar" >
                             <FormGroup>
-                                <Input type="text" name="searchInput" id="searchInput" value={searchInput} onChange={handleChange} placeholder="Search" style={{marginTop: "20px", height:"40px !important"}}/>
+                                <Input type="text" name="searchInput" id="searchInput" value={searchInput} onKeyDown={handleEnter} onChange={handleChange} placeholder="Search" style={{marginTop: "20px", height:"40px !important"}}/>
                             </FormGroup>
                         </Form>
                         <Button onClick={handleClick}><i className="fa fa-search"></i></Button>

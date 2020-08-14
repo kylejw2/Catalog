@@ -45,6 +45,7 @@ const Word = (props) => {
         body: JSON.stringify(data)
       }
       await fetch(`${process.env.REACT_APP_API_URL}/glossary/${props.word._id}`, options);
+      props.refresh();
     }
     
     return (

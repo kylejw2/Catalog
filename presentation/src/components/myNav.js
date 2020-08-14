@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 const MyNav = () => {
@@ -13,10 +14,10 @@ const MyNav = () => {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/"><i className="fa fa-home"></i> Home</NavLink>
+              <Link to="/" className='nav-link'><i className="fa fa-home"></i> Home</Link>
             </NavItem>
             <NavItem>
-              <NavLink href="/glossary/"><i className="fa fa-book"></i> Glossary</NavLink>
+              <Link to="/glossary/" className='nav-link'><i className="fa fa-book"></i> Glossary</Link>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/kylejw2" target="_blank"><i className="fa fa-github"></i> GitHub</NavLink>
