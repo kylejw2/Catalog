@@ -108,12 +108,14 @@ class Glossary extends React.Component {
     }
 
     render() {
-        const words = this.state.words.map(word => <Word 
-            key={word._id} 
-            word={word} 
-            remove={this.removeTerm} 
-            refresh={this.refresh}
-        />);
+        const words = this.state.words.map(word => {
+            return (<Word 
+                key={word._id} 
+                word={word} 
+                remove={this.removeTerm} 
+                refresh={this.refresh}
+                />)
+            });
         return (
             <>
             <MyJumbotron 

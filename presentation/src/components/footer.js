@@ -10,7 +10,7 @@ const Footer = () => {
                     <img src={icon} alt='' width='58px'/>
                     <hr className='light'/>
                     <p>801-509-8540</p>
-                    <p>kylejamwright@gmail.com</p>
+                    <p><a href="mailto:kylejamwright@gmail.com?subject=Your Services">kylejamwright@gmail.com</a></p>
                     <p>Greater Salt Lake Area</p>
                 </div>
                 <div className='col-md-4'>

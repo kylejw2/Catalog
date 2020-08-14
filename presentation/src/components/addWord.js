@@ -76,7 +76,7 @@ const AddWord = (props) => {
   }
 
   const definitions = word.definition.map((def, index) => {
-    return <Input style={{marginBottom: "10px"}} type="textarea" name="definition" id="definition" value={def} onChange={event => handleChangeDef(event, index)} />
+    return <Input style={{marginBottom: "10px"}} type="textarea" name="definition" id="definition" key={index} value={def} onChange={event => handleChangeDef(event, index)} />
   })
 
   return (

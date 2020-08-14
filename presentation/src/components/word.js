@@ -30,7 +30,8 @@ const Word = (props) => {
     : definition = '';
 
     const handleClick = () => {
-      props.remove(props.word._id);
+      const toDelete = window.confirm("Are you sure you want to delete this term?");
+      if (toDelete) {props.remove(props.word._id)};
     }
 
     const archive = async () => {
