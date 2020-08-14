@@ -113,5 +113,10 @@ ul li {
     .search-bar {
         height: 87px;
     }
-        
+}
+
+@media only screen and (max-width: 579px) {
+    .main-title {
+        font-size: 2.5rem !important;
+    }
 }

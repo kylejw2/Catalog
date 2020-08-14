@@ -13,7 +13,7 @@ function App() {
           <Home />
         </Route>
         <Route path='/glossary/'>
-          <Glossary />
+          <Glossary  />
         </Route>
         </Switch>
     </Router>
