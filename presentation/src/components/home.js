@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Button} from 'reactstrap';
 import Footer from './footer';
 import '../App.css';
@@ -24,20 +25,20 @@ function App() {
         </div>
         <div className='container-fluid padding'>
         <div className='row text-center padding'>
-        <div className='col-lg-4 col-md-6 col-sm-6 extra-padding'>
+        <div className='col-lg-4 col-md-6 extra-padding'>
           <h3>SEARCH</h3>
             <p>Have a word in mind? Search for it in the glossary here.</p>
-            <Button color="info" href="/glossary/">Search</Button>
+            <Link to="/glossary/"><Button color="info">Search</Button></Link>
         </div>
-        <div className='col-lg-4 col-md-6 col-sm-6 extra-padding'>
+        <div className='col-lg-4 col-md-6 extra-padding'>
             <h3>POPULARITY</h3>
             <p>My algorithm finds the most relevant words/phrases for you.</p>
-            <Button color="info" href="/glossary/">Popularity</Button>
+            <Link to="/glossary/"><Button color="info">Popularity</Button></Link>
         </div>
-        <div className='col-lg-4 col-md-12 col-sm-12 extra-padding'>
+        <div className='col-lg-4 col-md-12 extra-padding'>
             <h3>TOPICS</h3>
             <p>Want to be an expert in a specific topic? Start here.</p>
-            <Button color="info" href="/glossary/">Topic</Button>
+            <Link to="/glossary/"><Button color="info">Topic</Button></Link>
         </div>
         </div>
         <hr className='my-4' />
