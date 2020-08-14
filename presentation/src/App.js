@@ -12,8 +12,8 @@ function App() {
         <Route path='/' exact>
           <Home />
         </Route>
-        <Route>
-          <Glossary path='/glossary/' />
+        <Route path='/glossary/'>
+          <Glossary />
         </Route>
         </Switch>
     </Router>
